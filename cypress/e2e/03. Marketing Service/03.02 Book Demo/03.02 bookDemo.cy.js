@@ -1,9 +1,19 @@
-describe.skip("Post subscribe newsletter with status code 200", () => {
-  it("Should successfully subscribe newsletter", () => {
+describe.skip("Post book demo with status code 200", () => {
+  it("Should successfully book demo", () => {
     cy.request({
       method: "POST",
-      url: "/marketing/newsletter/subscribe",
-      body: { email: "asdfjlasj@gmail.com" },
+      url: "/marketing/book-demo",
+      body: {
+        email: "afdgdsfg@gmail.com",
+        firstName: "fgf",
+        lastName: "fds",
+        phone: "17635764576",
+        about: "gfsdg",
+        companyWeb: "rwet",
+        companyName: "gfdsg",
+        hsCurrentLms: true,
+        isReferred: true,
+      },
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200, "Expected status code is 200");
