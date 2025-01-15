@@ -1,8 +1,8 @@
-describe("Get programs data with status code 200", () => {
-  it("Should successfully fetch programs data", () => {
+describe("Get enrollment data with status code 200", () => {
+  it("Should successfully fetch enrollment data", () => {
     cy.request({
       method: "GET",
-      url: "/course/get?type=program",
+      url: "/enrollment/enrollmentdata",
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200, "Expected status code is 200");
