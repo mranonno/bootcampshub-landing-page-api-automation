@@ -1,18 +1,18 @@
 let accessToken;
-let articleSlug;
-describe("Get single article with status code 200", () => {
+let articleId;
+describe("Delete single article with status code 200", () => {
   before(() => {
     cy.readFile("cypress/fixtures/userToken.json").then((data) => {
       accessToken = data.userAccessToken;
     });
-    cy.readFile("cypress/fixtures/articleSlug.json").then((article) => {
-      articleSlug = article.articleSlug;
+    cy.readFile("cypress/fixtures/articleId.json").then((article) => {
+      articleId = article.articleId;
     });
   });
-  it("Checking if should be able to get single article", () => {
+  it("Checking if should be able to delete single article", () => {
     cy.request({
-      method: "GET",
-      url: `/blog/article/${articleSlug}`,
+      method: "DELETE",
+      url: `/blog/article/delete/${articleId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
