@@ -1,5 +1,5 @@
 describe.skip("Post send email with status code 200", () => {
-  it("Should successfully send email", () => {
+  it("Checking if should be able to send email", () => {
     cy.request({
       method: "POST",
       url: "/marketing/contact/email",

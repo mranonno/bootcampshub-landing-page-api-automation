@@ -1,8 +1,17 @@
-describe("Get enrollment data with status code 200", () => {
-  it("Checking if should be able to fetch enrollment data", () => {
+describe("Get single article with status code 200", () => {
+  let accessToken;
+  before(() => {
+    cy.readFile("cypress/fixtures/userToken.json").then((data) => {
+      accessToken = data.userAccessToken;
+    });
+  });
+  it("Checking if should be able to get single article", () => {
     cy.request({
       method: "GET",
-      url: "/enrollment/enrollmentdata",
+      url: "/blog/article/testing-tool-2",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200, "Expected status code is 200");

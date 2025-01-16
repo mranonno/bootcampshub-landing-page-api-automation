@@ -1,5 +1,5 @@
 describe.skip("Post subscribe newsletter with status code 200", () => {
-  it("Should successfully subscribe newsletter", () => {
+  it("Checking if should be able to subscribe newsletter", () => {
     cy.request({
       method: "POST",
       url: "/marketing/newsletter/subscribe",

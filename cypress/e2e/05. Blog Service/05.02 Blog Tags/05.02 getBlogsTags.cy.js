@@ -1,5 +1,5 @@
 describe("Get blog tags with status code 200", () => {
-  it("Should successfully fetch blog tags", () => {
+  it("Checking if should be able to fetch blog tags", () => {
     cy.request({
       method: "GET",
       url: "/blog/tags",

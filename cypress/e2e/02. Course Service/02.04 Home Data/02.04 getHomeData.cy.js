@@ -1,5 +1,5 @@
 describe("Get home data with status code 200", () => {
-  it("Should successfully fetch home data", () => {
+  it("Checking if should be able to fetch home data", () => {
     cy.request({
       method: "GET",
       url: "/course/homedata",

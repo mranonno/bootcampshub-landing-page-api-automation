@@ -1,5 +1,5 @@
 describe("Get professional service data with status code 200", () => {
-  it("Should successfully fetch professional data", () => {
+  it("Checking if should be able to fetch professional data", () => {
     cy.request({
       method: "GET",
       url: "/course/get?type=professional-service",

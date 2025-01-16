@@ -1,8 +1,25 @@
-describe("Get blog users with status code 200", () => {
-  it("Should successfully fetch blog users", () => {
+describe("Get my blogs articles with status code 200", () => {
+  let accessToken;
+  before(() => {
+    cy.readFile("cypress/fixtures/userToken.json").then((data) => {
+      accessToken = data.userAccessToken;
+    });
+  });
+  it("Checking if should be able to get my blogs article", () => {
     cy.request({
-      method: "GET",
-      url: "/blog/users",
+      method: "POST",
+      url: "/blog/myarticles",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: {
+        page: 1,
+        limit: 10,
+        sort: "",
+        category: "",
+        query: "",
+        tag: "",
+      },
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200, "Expected status code is 200");

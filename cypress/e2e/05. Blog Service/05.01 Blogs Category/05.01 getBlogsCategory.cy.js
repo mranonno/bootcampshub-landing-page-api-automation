@@ -1,5 +1,5 @@
 describe("Get blogs category with status code 200", () => {
-  it("Should successfully fetch blog category", () => {
+  it("Checking if should be able to fetch blog category", () => {
     cy.request({
       method: "GET",
       url: "/blog/category/get",

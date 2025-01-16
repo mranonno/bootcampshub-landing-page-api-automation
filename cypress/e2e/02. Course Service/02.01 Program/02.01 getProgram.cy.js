@@ -1,5 +1,5 @@
 describe("Get programs data with status code 200", () => {
-  it("Should successfully fetch programs data", () => {
+  it("Checking if should be able to fetch programs data", () => {
     cy.request({
       method: "GET",
       url: "/course/get?type=program",

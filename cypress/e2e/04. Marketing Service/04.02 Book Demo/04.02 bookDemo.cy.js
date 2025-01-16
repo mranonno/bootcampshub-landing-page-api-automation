@@ -1,5 +1,5 @@
 describe.skip("Post book demo with status code 200", () => {
-  it("Should successfully book demo", () => {
+  it("Checking if should be able to book demo", () => {
     cy.request({
       method: "POST",
       url: "/marketing/book-demo",

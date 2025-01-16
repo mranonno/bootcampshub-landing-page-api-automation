@@ -1,8 +1,8 @@
-describe("Get enrollment data with status code 200", () => {
-  it("Checking if should be able to fetch enrollment data", () => {
+describe("Get blog users with status code 200", () => {
+  it("Checking if should be able to fetch blog users", () => {
     cy.request({
       method: "GET",
-      url: "/enrollment/enrollmentdata",
+      url: "/blog/users",
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200, "Expected status code is 200");
