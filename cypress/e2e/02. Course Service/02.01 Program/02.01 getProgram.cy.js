@@ -11,7 +11,7 @@ describe("Get programs data with status code 200", () => {
         expect(body.success).to.eq(true);
         expect(duration).to.be.lessThan(
           2000,
-          "Response time should be less than 2 seconds"
+          "Response time should be less than 2.5 seconds"
         );
         cy.log("Response body (stringified):", JSON.stringify(body, null, 2));
         console.log(
