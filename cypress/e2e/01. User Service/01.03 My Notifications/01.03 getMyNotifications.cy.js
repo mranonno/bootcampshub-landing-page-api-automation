@@ -1,14 +1,14 @@
-describe("Get docs frontend with status code 200", () => {
+describe("Get my notifications with status code 200", () => {
   let accessToken;
   before(() => {
     cy.readFile("cypress/fixtures/userToken.json").then((data) => {
       accessToken = data.userAccessToken;
     });
   });
-  it("Checking if should be able to get docs frontend", () => {
+  it("Checking if should be able to get my notifications", () => {
     cy.request({
       method: "GET",
-      url: "/docs/frontend",
+      url: "/notification/mynotifications",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -17,7 +17,7 @@ describe("Get docs frontend with status code 200", () => {
       expect(response.status).to.eq(200, "Expected status code is 200");
       if (response.status === 200) {
         const { body, duration } = response;
-        expect(body.success).to.eq(true);
+        expect(body).to.have.property("notifications");
         expect(duration).to.be.lessThan(
           2000,
           "Response time should be less than 2 seconds"
